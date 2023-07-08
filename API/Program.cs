@@ -13,9 +13,11 @@ builder.Services.AddSwaggerGen();
 
 //Cors
 builder.Services.AddCors(options => options.AddPolicy("AllowWebapp",
-                                    builder => builder.AllowAnyOrigin()  
-                                                      .AllowAnyHeader()
-                                                      .AllowAnyMethod()));
+builder => builder.AllowAnyOrigin()  
+.AllowAnyHeader()  
+.AllowAnyMethod()));
+
+                                                    
 
 // Add Context
 builder.Services.AddDbContext<StoreContext>(options =>
