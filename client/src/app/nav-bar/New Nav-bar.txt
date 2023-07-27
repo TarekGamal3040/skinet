@@ -1,0 +1,44 @@
+ <nav class="navbar navbar-expand-lg bg-body-tertiary bg-white border-bottom fixed-top shadow-sm">
+        <div class="container-fluid px-5">
+
+            <!-- img logo -->
+            <img src="/logo.png" alt="logo" class="logo" style="max-height: 70px" />
+
+            <!-- button nav-bar -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <!-- This icon Button navbar -->
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-4">
+                    <li class="nav-item">
+                        <a class="me-3 py-2 text-dark text-decoration-none active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Contact</a>
+                    </li>
+                </ul>
+
+
+               <!-- Subscribe Login | Sign up -->
+                <div class="d-flex align-items-center">
+                    <a class="position-relative">
+                        <i class="fa fa-shopping-cart fa-2x me-5 text-dark"></i>
+                        <div class="cart-no">5</div>
+                    </a>
+                    <a href="" class="btn btn-outline-secondary me-2">Login</a>
+                    <a href="" class="btn btn-outline-secondary me-3">Sign up</a>
+                </div>
+
+
+            </div>
+        </div>
+    </nav>
+
