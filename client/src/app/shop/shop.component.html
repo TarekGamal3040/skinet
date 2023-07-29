@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row">    <!-- d-none d-md-block From Tarek Gamal -->
+        <section class="col-3 d-none d-md-block">
+            <h5 class="text-warning ms-3">Sort</h5>
+            <select class="form-select mb-4" (change)="onSortSelected($event)">
+                <option *ngFor="let sort of sortOptions" [value]="sort.value">  
+                    <!--  "Alphabetical" if change this word Go to shop.component.ts -->
+                     {{sort.name}}
+                </option>
+            </select>
+
+
+
+              <!-- text-warning this color font Brands -->
+            <h5 class="text-warning ms-3">Brands</h5>
+                <!-- my-3 this space between Brands and ul list -->
+                <ul class="list-group my-3">
+                    <li class="list-group-item" 
+                        *ngFor="let brand of brands"
+                        [class.active]="brand.id === shopParams.brandId"
+                        [value]="brand.id"
+                        (click)="onBrandSelected(brand.id)"
+                        >{{brand.name}}</li>
+                  </ul>
+
+                  <h5 class="text-warning ms-3">Types</h5>
+                  <ul class="list-group my-3">
+                      <li class="list-group-item" 
+                      *ngFor="let type of types"
+                      [class.active]="type.id === shopParams.typeId"
+                      [value]="type.id"
+                      (click)="onTypeSelected(type.id)"
+                      >{{type.name}}</li>   
+                    </ul>
+        </section>
+
+
+
+    <!-- mx-auto text-center For All section When screen sm or xs this section in center -->
+        <section class="col-9 mx-auto text-center">
+            <!-- this part d-flex justify-content-between align-items-center if remove Good -->
+            <div class="d-flex justify-content-between align-items-center pb-2">
+                <app-paging-header
+                     [totalCount]="totalCount"
+                     [pageNumber]="shopParams.pageNumber"
+                     [pageSize]="shopParams.pageSize"
+                ></app-paging-header>
+
+                <div class="d-flex mt-2">
+                    <input (keyup.enter)="onSearch()" type="text" placeholder="Search" class="form-control me-2" #search>
+                    <button (click)="onSearch()" class="btn btn-outline-primary mx-2">Search</button>
+                    <button (click)="onReset()" class="btn btn-outline-success">Reset</button>
+                </div>
+            </div>
+
+
+    <!-- mb-4  For Space between Products and Pagination -->
+
+        <div class="row g-3 mb-4">
+            <div class="col-md-6 col-lg-5 col-xl-4" *ngFor="let product of products">
+                <app-product-item [product]="product"></app-product-item>
+            </div>
+        </div>
+
+              <!-- This is Pagination -->
+            <div class="d-flex justify-content-center" *ngIf="totalCount > 0">
+                <app-pager
+                [totalCount]="totalCount"
+                [pageSize]="shopParams.pageSize"
+                (pageChanged)="onPageChanged($event)"
+                ></app-pager>
+            </div>
+
+       
+        </section>
+    </div>
+</div>
