@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary bg-white border-bottom fixed-top shadow-sm">
   <div class="container-fluid px-4 p-2">
     <!-- img logo -->
-    <img src="/assets/images/logo.png" alt="logo" class="logo" style="max-height: 70px" routerLink="/" />
+    <img src="/assets/images/logo.png" alt="logo" class="logo" style="max-height: 70px" routerLink="/">
 
     <!-- button nav-bar -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main" aria-controls="main"
@@ -12,15 +12,18 @@
 
     <!-- Links -->
     <div class="collapse navbar-collapse" id="main">
-      <ul class="navbar-nav mx-auto text-center mb-2 mb-lg-0 fs-3">
-        <li class="nav-item">
-          <a class="me-3 py-2 text-dark text-decoration-none text-uppercase" href="#">Home</a>
+      <ul class="navbar-nav text-uppercase mx-auto text-center mb-2 mb-lg-0 fs-3"> <!-- text-uppercase -->
+        <li class="nav-item">          <!-- routerLink="/" Go to page home --> 
+          <a class="me-3 py-2" 
+          routerLink="/" 
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="me-3 py-2 text-dark text-decoration-none text-uppercase" href="#">Shop</a>
+          <a class="me-3 py-2" routerLink="/shop" routerLinkActive="active">Shop</a>
         </li>
         <li class="nav-item">
-          <a class="me-3 py-2 text-dark text-decoration-none text-uppercase" href="#">Contact</a>
+          <a class="me-3 py-2" routerLink="/contact" routerLinkActive="active">Contact</a>
         </li>
       </ul>
 

@@ -11,6 +11,15 @@
     justify-content: center;
 }
 
+a {
+    text-decoration: none;
+    color: #343a40;
+
+    &.active {
+         color: orange 
+    }
+}
+
 /* For Size Button Nav-bar  */
 .navbar .navbar-toggler {
     font-size: 25px;
@@ -21,6 +30,8 @@
 .navbar .navbar-toggler:focus{
     box-shadow: none;
 }
+
+.logo {cursor: pointer;}
 
 
 
